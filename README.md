@@ -1,2 +1,1 @@
-# Easy-array-prob
-Solution to easy array problems
+Solution to some array problems
