@@ -5,7 +5,6 @@ public class Solution
     {
         Arrays.sort(nums);
         int f=0,ff=0,element=0,j;
-        int freq[]=new int[nums.length];
 	for(int i=0; i<nums.length; i=i+f)
 	{
 		f=1;
