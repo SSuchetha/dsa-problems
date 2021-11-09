@@ -1,21 +1,26 @@
 import java.util.*;
 public class Solution 
 {
-    public int majorityElement(final int[] A) 
+    public int majorityElement(int[] nums) 
     {
-        int n=A.length;
-        for (int i = 0; i<=n/2; i++)
-        {
-            int count = 1;
-            for (int j = i + 1; j < n; j++)
+        Arrays.sort(nums);
+        int f=0,ff=0,element=0,j;
+        int freq[]=new int[nums.length];
+	    for(int i=0; i<nums.length; i=i+f)
+	    {
+		    f=1;
+		    for(j=i+1; j<nums.length; j++)
+		    {
+			    if(nums[i]==nums[j])
+				    f++;
+		    }	
+            if(f>ff)
             {
-                if (A[j] == A[i]) 
-                    count++;
+                ff=f;
+                element=nums[i];
             }
-            if (count > n/2) 
-                return A[i];
-        }
-    return -1;  
+	    }
+        return element;
     }
     public static void main(String [] args)
     {
